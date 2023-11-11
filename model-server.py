@@ -95,6 +95,7 @@ def get_pred(data, which_model=None):
         else:
             if challenger_cols is not None:
                 features = features.reindex(features.columns.union(challenger_cols, sort=False), axis=1, fill_value=0)
+            print(challenger)
             pred = challenger.predict(features)[0]
             model_used = 'challenger'
         
